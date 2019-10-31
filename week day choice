@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class WeekDays {
+
+    public static void main(String[] args) {
+
+        String[] dni = new String[]{"Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela"};
+
+        Scanner input = new Scanner(System.in);
+
+        char choice = 0;
+        do {
+            System.out.println("Podaj numer dnia tygodnia, od 1 do 7");
+            int numerDnia = input.nextInt();
+
+
+            if (numerDnia < 1) {
+                System.out.println("Popraw dane wejściowe");
+                System.out.println("Próbujesz ponownie (T/N)?");
+                choice = input.next().charAt(0);
+            } else if (numerDnia > 7) {
+                System.out.println("Popraw dane wejściowe");
+                System.out.println("Próbujesz ponownie? (T/N)");
+                choice = input.next().charAt(0);
+            } else {
+                System.out.println("Wybrałeś " + dni[numerDnia - 1]);
+                System.out.println("Grasz dalej? (T/N)");
+                choice = input.next().charAt(0);
+            }
+        }
+        while ((choice == 't') || (choice == 'T'));
+
+    }
+
+}
